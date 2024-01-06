@@ -129,8 +129,8 @@ if ("geolocation" in navigator) {
                     var locationName = data.name;
                     console.log(data)
                     document.getElementById("current-location").innerHTML = locationName;
-                     // Call searchResult only if locationName is successfully fetched
-                     searchResult();
+                    // Call searchResult only if locationName is successfully fetched
+                    searchResult();
 
                 })
                 .catch(error => {
@@ -151,7 +151,7 @@ if ("geolocation" in navigator) {
 }
 
 
- 
+
 
 
 
@@ -187,9 +187,9 @@ const searchResult = async () => {
     if (element2.textContent.includes(errorTextCriteria)) {
         alert("Location fetch error or is invalid!");
         return 0;
-    } 
+    }
 
-     progress.style.width = "20%";
+    progress.style.width = "20%";
     // .............This is for current weather data get request..............
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${element.value || element2.textContent}&appid=${api_key}&units=metric`
 
@@ -342,10 +342,8 @@ const searchResult = async () => {
         // Initial call to format and display date and time
         formatDateTime(timezoneOffsetSeconds);
 
-        // Update the local date and time every Minute (60000 milliseconds)
-        setInterval(() => {
-            formatDateTime(timezoneOffsetSeconds);
-        }, 60000);
+
+
 
         progress.style.width = "80%";
 
