@@ -363,7 +363,7 @@ const searchResult = async () => {
 
     // .........................This is for Hourly forcast data get request....................................
 
-    let myurl = `http://api.openweathermap.org/data/2.5/forecast?q=${element.value || element2.textContent}&appid=${api_key}&units=metric`
+    let myurl = `https://api.openweathermap.org/data/2.5/forecast?q=${element.value || element2.textContent}&appid=${api_key}&units=metric`
 
     let response = await fetch(myurl)
     let mydata = await response.json();
