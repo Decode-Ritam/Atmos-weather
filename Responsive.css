@@ -1,0 +1,288 @@
+/* .........Screen size 480px(Mini computer) .............*/
+
+@media screen and (max-width: 1025px) {
+
+    /* Navbar container */
+    .container {
+        padding: 0px 40px;
+
+    }
+
+    /*.............. body container current forcast  section.........*/
+    .body-container {
+        padding: 25px 20px;
+        gap: 30px;
+    }
+
+    .label .icon img {
+        height: 25px;
+        transition: 5s;
+    }
+
+    .weatherstatus {
+        height: 60px;
+    }
+
+    .dayStatus .weathertemp {
+        font-size: 27px;
+    }
+
+    .main-details-Left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .other-details {
+        gap: 5px;
+    }
+
+    /*.............. body container Future forcast  section style .........*/
+
+    .container-future-forcast {
+        padding: 15px 20px 15px 20px;
+        gap: 30px;
+    }
+
+    .hour .hour00,
+    .hour06,
+    .hour12,
+    .hour18,
+    .hour24 {
+
+        padding: 1px;
+    }
+
+    .hour-Weather-status img {
+        height: 36px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+/* .........Screen size 769px(Tab) .............*/
+
+@media screen and (max-width: 769px) {
+
+    /* Navbar container */
+    .container {
+        padding: 0px 5px;
+
+    }
+
+    .nav-Left {
+        font-size: 18px;
+    }
+
+    .searchbar {
+        width: auto;
+        font-size: 16px;
+
+    }
+
+    /*.............. body container current forcast  section.........*/
+
+    .body-container {
+        padding: 25px 20px;
+        gap: 15px
+    }
+
+    .row-left .time {
+        height: 30%;
+        font-size: 50px;
+    }
+
+    .main-details-Heading {
+        font-size: 16px;
+
+    }
+
+    .body-container {
+
+        flex-direction: column;
+    }
+
+    .row-left {
+        width: 90%;
+    }
+
+    .row-right {
+        width: 90%;
+    }
+
+    /*.............. body container future forcast  section.........*/
+
+    .container-future-forcast {
+        flex-direction: column;
+    }
+
+    .left-container {
+        width: 90%;
+    }
+
+    .right-container {
+        width: 90%;
+    }
+
+    .hour {
+        gap: 16px;
+
+    }
+
+
+
+}
+
+/* .........Screen size 426px(Mobile) .............*/
+@media screen and (max-width: 426px) {
+
+    /* Navbar container */
+    .container {
+        padding: 0px 15px;
+        box-shadow: none;
+        height: 60px;
+    }
+
+
+    .searchbar {
+        display: none;
+    }
+
+
+    .searchbar-icon {
+        display: none;
+        /* height: 36px;
+        border-radius: 35px;
+        padding: 9px; */
+    }
+
+    .searchtoggle {
+        display: flex;
+        width: 5%;
+    }
+
+    .search-icon-toggle {
+        display: block;
+        height: 23px;
+    }
+
+    .inpurfields-Box {
+        width: 95%;
+    }
+
+    .btn {
+        display: none;
+    }
+
+
+    .nav-Left {
+        width: 90%;
+        font-size: 15px;
+    }
+
+    .nav-Middle {
+        width: 10%;
+        justify-content: right;
+        gap: 5px;
+    }
+
+    .nav-Right {
+        /* width: 60%; */
+        display: none;
+
+    }
+
+    .nav-Right .location {
+        height: 13px;
+    }
+
+
+    .location-tag p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .location-tag span img {
+        height: 21px;
+    }
+
+    /*.............. body container future Current  section.........*/
+    .row-right {
+        width: 100%;
+        height: auto;
+    }
+
+    .row-left {
+        width: 100%;
+    }
+
+    .left-container h2 {
+        color: black;
+        font-size: 17px;
+        padding: 12px 0px;
+    }
+
+    .left-container .day {
+
+        font-size: 12px;
+    }
+
+    .main-details-Heading {
+        font-size: 16px;
+        padding: 25px 0px;
+    }
+
+    #innerMessage {
+        font-size: 10px;
+
+    }
+
+    .main-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        height: 40%;
+        justify-content: space-between;
+    }
+
+    .other-details {
+        gap: 25px;
+        margin-top: 2rem;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    /*.............. body container future forcast  section.........*/
+
+    .left-container {
+        width: 100%;
+        height: auto;
+        padding: 25px 0px;
+
+    }
+
+    .right-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .hour {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+
+
+}

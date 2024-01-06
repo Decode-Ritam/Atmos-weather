@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Img folder/App icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather APP</title>
+
+    <!--CUSTOM STYLE SHEET-->
+    <link rel="stylesheet" href="weatherStyle.css">
+    <link rel="stylesheet" href="Responsive.css">
+</head>
+
+<body>
+
+    <!--custom progress-bar -->
+    <div class="progess-bar">
+        <div class="progress"></div>
+    </div>
+
+    <!-- THIS IS NAVBAR HTML CODE HEARE -->
+    <div class="container">
+        <nav class="navbar">
+            <!-- THIS IS BRAND NAME -->
+            <div class="nav-Left">
+                Atmos Weather
+            </div>
+
+            <div class="nav-Middle">
+                <!-- This is mobile view search-icon -->
+                <div class="searchtoggle">
+                    <img class="search-icon-toggle" src="Img folder/searchIcon.png" alt="img">
+                </div>
+
+                <!-- This is my input field BOX-->
+                <div class="inpurfields-Box">
+                    <!-- This is search ICON-->
+                    <div class="searchbar-icon">
+                        <img class="search-icon" src="Img folder/searchIcon.png" alt="img">
+                    </div>
+                    <!-- This is search inptu field -->
+                    <input id="myinput" class="searchbar" onkeypress="handleKeyPress(event)" type="text"
+                        placeholder="Search for your preffered city..." autocomplete="off">
+
+                    <!-- This is inputvalu closs Tag -->
+                    <span id="closeButton" class="close"> </span>
+
+                    <!-- This is input search history Tag / Container Box -->
+                    <div id="searchContainer" class="result-box">
+                        <!-- This is input search history retrive Tag -->
+                        <ul id="myContainer">
+                            <li>Delhi</li>
+                            <li>Mumbai</li>
+                            <li>Kolkata</li>
+                            <li>Naihati</li>
+                            <li>Goa</li>
+                            <li>Chennai</li>
+                            <li>Bengaluru</li>
+                            <li>Hyderabad</li>
+                            <li>Ahmedabad</li>
+                            <li>Jaipur</li>
+                            <li>Lucknow</li>
+                            <li>United States</li>
+                            <li>China</li>
+                            <li>Russia</li>
+                            <li>Japan</li>
+                            <li>United Kingdom</li>
+                            <li>Spain</li>
+
+                        </ul>
+                        <!-- This is input search history blank Message -->
+                        <ul id="innerMessage"> No history data have search largest city! </ul>
+                    </div>
+
+                </div>
+
+                <!-- This is search button -->
+                <button style="border:none;" class="btn" onclick="searchResult(event)" type="submit"><img
+                        src="Img folder/searchIcon.png" alt="img"></button>
+
+            </div>
+
+            <!-- THIS IS nav-Right -->
+            <div class="nav-Right">
+                <div class="location-tag">
+                    <!-- Location information -->
+                    <img class="location" src="Img folder/LocationIcon.png" alt="img">
+                    <p id="current-location" class="weatherLocation location-name">Washington</p>
+                    <!-- Weather img and temparacher -->
+                    <span class="day"><img class="navwethericon" src="Img folder/clear 2.png" alt="img">
+                        <p class="weathertemp">23°C</p>
+                    </span>
+                </div> 
+
+            </div>
+        </nav>
+    </div>
+
+    <!-- THIS IS BODY CONTAINER CURRENT FORCAST HTML CODE HEARE -->
+    <div class="body-container">
+        <!-- This is current time date -->
+        <div class="row-left">
+
+            <div class="weatherLocation location">India (Delhi)</div>
+            <div class="location-time time">09:34 AM</div>
+            <div class="location-date date">Sunday, 25 May 2023</div>
+
+        </div>
+        <!-- This is current Weather Forcast -->
+        <div class="row-right">
+
+            <p class="main-details-Heading">Current Weather - <span class="weatherLocation">Kolkata</span></p>
+            <div class="main-details">
+                <div class="main-details-Left">
+                    <div class="dayStatus"><img class="weatherstatus" src="Img folder/clear 2.png" alt="img">
+                        <p class="weathertemp"> 23°C</p>
+                    </div>
+
+                    <div class="fell-like">
+                        <p class="weather">Clear</p>
+                        <p> Fell like &nbsp;&nbsp;<span class="felltempvalue">31°C</span></p>
+                    </div>
+                </div>
+                <div class="main-details-Right">
+
+                    <div class="sunrise">
+                        <img class="suntime-status" src="Img folder/sunrise icon.png" alt="img">
+                        <div class="sunrise-textinfo">
+                            <p>Sunrise</p>
+                            <p class="sunrisetime">06:12AM</p>
+                        </div>
+                    </div>
+                    <div class="sunset">
+                        <img class="suntime-status" src="Img folder/sunset-white.png" alt="img">
+                        <div class="sunrise-textinfo">
+                            <p>Sunset</p>
+                            <p class="sunsettime">06:12AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="other-details">
+                <div class="airQuality label">
+                    <div class="icon"><img class="current-windDirection" src="Img folder/navigation 1.png" alt="img">
+                    </div>
+                    <div class="name">Wind direction &nbsp;
+                        <div class="tooltip">
+                            <img style="height: 12px;" src="Img folder/icons8-information-64.png" alt="img">
+
+                            <div class="tooltiptext">
+                                Wind direction matters because it can cause weather changes.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="windDirection-valu">0 °</div>
+                </div>
+
+                <div class="windSpeed label">
+                    <div class="icon"><img src="Img folder/wind 1.png" alt="img"> </div>
+                    <div class="name">Wind Speed &nbsp;
+                        <div class="tooltip">
+                            <img style="height: 12px;" src="Img folder/icons8-information-64.png" alt="img">
+                            <!-- This is tooltip Text.. -->
+                            <div class="tooltiptext">
+                                Light winds at 1-5 kph <br>
+                                Light breeze at 6-11 kph <br>
+                                Gentle breeze at 12-19 kph <br>
+                                Gentle breeze at 20-28 kph <br>
+                                Fresh breeze at 29-38 kph <br>
+                                Strong breeze at 39-49 kph <br>
+                                Moderate gale at 50-61 kph <br>
+                                Fresh gale at 62-74 kph <br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valu windSpeedvalue">8 km/h (Light breeze )</div>
+
+                </div>
+                <div class="humedity label">
+                    <div class="icon"><img src="Img folder/humidity 1.png" alt="img"> </div>
+                    <div class="name">humedity &nbsp;
+                        <div class="tooltip">
+                            <img style="height: 12px;" src="Img folder/icons8-information-64.png" alt="img">
+                            <!-- This is tooltip Text.. -->
+                            <div class="tooltiptext">
+                                Low Humidity:(0% - 50%)<br><br>
+                                Moderate Humidity:( 50% - 60%)<br><br>
+                                High Humidity:( 70% - 80% ) <br><br>
+                                Extreme Conditions:
+                                ( 100% air fully saturated with moisture )
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valu humidityvalue">60%</div>
+
+                </div>
+                <div class="visibility label">
+                    <div class="icon"><img src="Img folder/icons8-visibility-50.png" alt="img"> </div>
+                    <div class="name">visibility &nbsp;
+                        <div class="tooltip">
+                            <img style="height: 12px;" src="Img folder/icons8-information-64.png" alt="img">
+                            <!-- This is tooltip Text.. -->
+                            <div class="tooltiptext">
+                                Foggy: Visibility less than 1 km.<br>
+                                Thick Fog: Visibility less than 500 meters.<br>
+                                Poor Visibility: 1 km to 4 km.<br>
+                                Moderate Visibility: 4 km to 10 km.<br>
+                                Good Visibility: 10 km to 20 km.<br>
+                                Excellent Visibility: More than 20 km.<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valu Visibilityvalue"> 3.5 km</div>
+
+                </div>
+                <div class="Pressure label">
+                    <div class="icon"><img src="Img folder/pressure-white 1.png" alt="img"> </div>
+                    <div class="name">Pressure &nbsp;
+                        <div class="tooltip">
+                            <img style="height: 12px;" src="Img folder/icons8-information-64.png" alt="img">
+                            <!-- This is tooltip Text.. -->
+                            <div class="tooltiptext">
+                                Pressure is the weight of the air in the atmosphere. It is normalized to the
+                                standard
+                                atmospheric pressure of 1,013.25 mb (29.9212 inHg). Higher pressure is usually
+                                associated with sunny weather, lower pressure with stormy weather. </div>
+                        </div>
+                    </div>
+                    <div class="valu Pressurevalue"> 1014 mb</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- THIS IS BODY CONTAINER FUTURE FORCAST   HTML CODE HEARE -->
+    <div class="container-future-forcast">
+        <div class="left-container">
+            <h2> Weekly Forcast</h2>
+            <div class="dayContainer">
+                <div class="no1 day">
+                    <div class="icon"><img src="Img folder/clear 2.png" alt=""> </div>
+                    <div class="State-weather"> Clear </div>
+                    <div class="temparacher">
+                        <p class="temp">Min 12°C</p>
+                        <p class="feels">Max 21°C</p>
+                    </div>
+                    <div class="date">Monday, 1 January </div>
+
+                </div>
+                <div class="no2 day">
+                    <div class="icon"><img src="Img folder/clouds 1.png  " alt=""> </div>
+                    <div class="State-weather"> Clouds </div>
+                    <div class="temparacher">
+                        <p class="temp">Min 12°C</p>
+                        <p class="feels">Max 21°C</p>
+                    </div>
+                    <div class="date">Tuesday, 2 January </div>
+
+                </div>
+                <div class="no3 day">
+                    <div class="icon"><img src="Img folder/clear 2.png" alt=""> </div>
+                    <div class="State-weather"> Clear </div>
+                    <div class="temparacher">
+                        <p class="temp">Min 12°C</p>
+                        <p class="feels">Max 21°C</p>
+                    </div>
+                    <div class="date">Wednesday, 3 January </div>
+
+                </div>
+                <div class="no4 day">
+                    <div class="icon"><img src="Img folder/drizzle 1.png " alt=""> </div>
+                    <div class="State-weather"> Drizzle </div>
+                    <div class="temparacher">
+                        <p class="temp">Min 12°C</p>
+                        <p class="feels">Max 21°C</p>
+                    </div>
+                    <div class="date">Thuresday, 4 January </div>
+
+                </div>
+                <div class="no5 day">
+                    <div class="icon"><img src="Img folder/clouds 1.png " alt=""> </div>
+                    <div class="State-weather"> Clouds </div>
+                    <div class="temparacher">
+                        <p class="temp">Min 12°C</p>
+                        <p class="feels">Max 21°C</p>
+                    </div>
+                    <div class="date">Friday, 5 January </div>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="right-container">
+            <h2> Hourely Forcast</h2>
+            <div class="hour">
+                <div class="hour00">
+                    <div class="hour-Timestamp">00:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour06">
+                    <div class="hour-Timestamp">06:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour12">
+                    <div class="hour-Timestamp">12:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour18">
+                    <div class="hour-Timestamp">18:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour24">
+                    <div class="hour-Timestamp">24:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour00">
+                    <div class="hour-Timestamp">00:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour06">
+                    <div class="hour-Timestamp">06:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour12">
+                    <div class="hour-Timestamp">12:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour18">
+                    <div class="hour-Timestamp">18:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+                <div class="hour24">
+                    <div class="hour-Timestamp">24:00</div>
+                    <div class="hour-Weather-status"><img src="Img folder/clear 2.png" alt="img"></div>
+                    <div class="hour-Weather-Temp">23°C</div>
+                    <div class="hour-WindDirection"><img src="Img folder/navigation 1.png" alt="img"></div>
+                    <div class="hour-WindDirection-Speed">23 km/h</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- THIS IS COUSTOM SCRIPT -->
+    <script src="watherScript.js"></script>
+    <script src="Responsive.js"></script>
+</body>
+
+</html>
