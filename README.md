@@ -57,6 +57,6 @@ To use the Weather App, follow these steps:
  
 ## Credits
 
-This Weather App was developed by [Your Name]. Special thanks to OpenWeatherMap for providing the weather data.
+Special thanks to OpenWeatherMap for providing the weather data.
 
  
